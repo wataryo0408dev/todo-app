@@ -5,8 +5,8 @@ export class EventEmitter{
 
   /**
    * 指定したイベントが実行された時に呼び出されるリスナー関数を登録する
-   * @param {string} type イベント名
-   * @param {Function} listener イベントリスナー
+   * @param {string}    type イベント名
+   * @param {Function}  listener イベントリスナー
    */
   addEventListener(type, listener){
     if(!this.#listeners.has(type)){
@@ -31,16 +31,14 @@ export class EventEmitter{
 
   /**
    * 指定したイベントのイベントリスナーを解除する
-   * @param {string} type イベント名
-   * @param {Function} listener イベントリスナー
+   * @param {string}    type イベント名
+   * @param {Function}  listener イベントリスナー
    */
   removeEventListener(type, listener){
     const listenerSet = this.#listeners.get(type);
     if(!listenerSet){return;}
     listenerSet.forEach(ownListener => {
-      if(ownListener === listener){
-        listenerSet.delete(listener);
-      }
+      if(ownListener === listener){ listenerSet.delete(listener); }
     });
   }
 }

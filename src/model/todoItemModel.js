@@ -12,8 +12,8 @@ export class TodoItemModel{
   /** @param {{title: string, completed: boolean}} */
   constructor({title, completed}){
     //idは連番となり、それぞれのインスタンス毎に異なるものとする
-    this.id = todoIdx++;
-    this.title = title;
-    this.completed = completed;
+    this.id         = todoIdx++;
+    this.title      = title;
+    this.completed  = completed;
   }
 }

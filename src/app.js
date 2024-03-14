@@ -1,7 +1,7 @@
 
-import { TodoListModel } from "./model/todoListModel.js";
-import { TodoItemModel } from "./model/todoItemModel.js";
-import { element, render } from "./view/util.js";
+import { TodoListModel }    from "./model/todoListModel.js";
+import { TodoItemModel }    from "./model/todoItemModel.js";
+import { element, render }  from "./view/util.js";
 
 export class App{
 
@@ -9,10 +9,10 @@ export class App{
   #todoListModel = new TodoListModel();
 
   mount(){
-    const formElement = document.querySelector('#js-form');
-    const inputElement = document.querySelector('#js-form-input');
-    const containerElement = document.querySelector('#js-todo-list');
-    const todoItemCountElement = document.querySelector('#js-todo-count');
+    const formElement           = document.querySelector('#js-form');
+    const inputElement          = document.querySelector('#js-form-input');
+    const containerElement      = document.querySelector('#js-todo-list');
+    const todoItemCountElement  = document.querySelector('#js-todo-count');
 
     // TodoListModelの状態が更新されたら表示を更新する。
     this.#todoListModel.onChange(() => {
